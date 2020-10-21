@@ -1,5 +1,5 @@
 
-public class SuperStack {
+public class SuperStack<T> {
 	
 	private T[] items;
 	private int top;
@@ -9,24 +9,33 @@ public class SuperStack {
 	}
 	
 	public boolean isEmpty() {
-		//TODO
-		return true;
+		return top == 0;
 	}
 	
 	public boolean isFull() {
-		//TODO
-		return false;
+		return top == items.length;
 	}
 	
-	
-	
 	public boolean push(T item) {
-		//TODO
+		
+		//short circuit just in case
+		if(isFull()) {
+			return false;
+		}
+		
+		//set the item at the top of the stack = item passed
+		items[top++] = item;
+		return true;
 	}
 	
 	public T pop() {
-		//TODO
-		return null;
+		if(isEmpty()) {
+			return null;
+		}
+		else {
+			top = top - 1;
+			return items[top];
+		}
 	}
 	
 	
