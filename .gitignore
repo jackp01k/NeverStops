@@ -1,3 +1,7 @@
 bin/
 
 # Eclipse
+/.classpath
+/.gitignore
+/.project
+/.settings
